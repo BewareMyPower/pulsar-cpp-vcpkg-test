@@ -37,6 +37,10 @@ jobs:
         with:
           submodules: true
 
+      - name: Go to source directory
+        shell: bash
+        run: cd pulsar-client-cpp/
+
       - name: Install vcpkg packages
         shell: bash
         run: |
