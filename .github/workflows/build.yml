@@ -60,5 +60,6 @@ jobs:
         shell: bash
         run: |
           if [ "$RUNNER_OS" == "Windows" ]; then
+            cd pulsar-client-cpp && \
             cmake --build ./build --target INSTALL --config MinSizeRel
           fi
