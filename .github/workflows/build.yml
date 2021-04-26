@@ -40,7 +40,7 @@ jobs:
       - name: Install vcpkg packages
         shell: bash
         run: |
-          vcpkg install --feature-flags --triplet ${{ matrix.triplet }}
+          vcpkg install --triplet ${{ matrix.triplet }}
 
       - name: Configure
         shell: bash
