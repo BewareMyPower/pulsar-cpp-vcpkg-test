@@ -1,13 +1,12 @@
 name: build
 on:
   push:
-    branches:
-      - '*'
-    tags:
-      - '*'
   pull_request:
     branches:
       - 'master'
+
+env:
+  VCPKG_FEATURE_FLAGS: manifests
 
 jobs:
   build:
@@ -21,14 +20,14 @@ jobs:
             os: windows-latest
             triplet: x64-windows
             vcpkg_dir: 'C:\vcpkg'
-            suffix: 'windows-win32'
+            suffix: 'windows-win64'
             generator: 'Visual Studio 16 2019'
             arch: '-A x64'
           - name: 'Windows x86'
             os: windows-latest
             triplet: x86-windows
             vcpkg_dir: 'C:\vcpkg'
-            suffix: 'windows-win64'
+            suffix: 'windows-win32'
             generator: 'Visual Studio 16 2019'
             arch: '-A Win32'
 
