@@ -1,4 +1,4 @@
-build*/
+_build*/
 temp/
 install/
 out/
@@ -7,3 +7,4 @@ out/
 *.kdev4
 *~
 *.zip
+vcpkg_installed/
