@@ -19,7 +19,11 @@
 #if BOOST_VERSION >= 105500
 #include <boost/predef.h>
 #else
+#ifdef _MSC_VER
+#pragma message("Boost version is < 1.55, disable CRC32C")
+#else
 #warning "Boost version is < 1.55, disable CRC32C"
+#endif
 #endif
 
 #include <assert.h>
@@ -29,7 +33,11 @@
 #include <nmmintrin.h>  // SSE4.2
 #include <wmmintrin.h>  // PCLMUL
 #else
+#ifdef _MSC_VER
+#pragma message("BOOST_ARCH_X86_64 is not defined, CRC32C will be disabled")
+#else
 #warning "BOOST_ARCH_X86_64 is not defined, CRC32C will be disabled"
+#endif
 #endif
 
 #ifdef _MSC_VER
